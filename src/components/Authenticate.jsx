@@ -9,8 +9,9 @@ function Authenicate ({token}) {
         const response = await fetch("https://fsa-jwt-practice.herokuapp.com/authenticate",
             {
                 method: "GET",
-                headers: {"Content-type": "application/json",
-                        Authorization: `Bearer ${token}`,
+                headers: 
+                    {"Content-type": "application/json",
+                    Authorization: `Bearer ${token}`,
             }})
         const result = await response.json();
         setSuccessMessage(result.message);
@@ -21,10 +22,11 @@ function Authenicate ({token}) {
 
     return(
         <div>
-            <h2>Authenicate Here</h2>
-                {successMessage? <p>{successMessage}</p>
-                : <p>{error}</p>}
-            <button onClick={handleClick}>Authenicate Token!</button>
+            <h2 className="auth">Authenicate Here</h2>
+                {successMessage && 
+                <p>{successMessage}</p>}
+                {error && <p>{error}</p>}
+            <button className="button" onClick={handleClick}>Authenicate Token!</button>
         </div>
     )
 }

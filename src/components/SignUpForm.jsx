@@ -26,7 +26,7 @@ function SignUpForm({setToken}){
     }
 
     return(
-        <div>
+        <div className="form">
             <h2>Sign Up!</h2>
             {error && <p>{error}</p>
                 //this conditionally renders the error with a truthy/falsy like using ? :
@@ -35,20 +35,26 @@ function SignUpForm({setToken}){
                 <label>
                     Username:
                     <input
+                        className="input"
                         name="username"
+                        required
                         onChange={(event)=>setUsername(event.target.value)}
                         value = {username}
                     />
                 </label>
+                <br/>
                 <label>
                     Password:
                     <input
+                        className="input"
                         name="password"
+                        required
                         onChange={(event) => setPassword(event.target.value)}
                         value={password}
                     />
                 </label>
-                <button>Submit</button>
+                <br/>
+                <button className="button">Submit</button>
             </form>
         </div>
     )

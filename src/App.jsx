@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <h1>Sign Up Here!</h1>
+      <h1 className="warning">Sign Up Here!</h1>
       <SignUpForm token={token} setToken={setToken}/>
 
       <Authenicate token={token} setToken={setToken}/>
